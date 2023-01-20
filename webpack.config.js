@@ -13,7 +13,7 @@ module.exports = {
     }),
   ],
   output: {
-    filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -23,5 +23,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
     ],
+  },
+  optimization: {
+    runtimeChunk: 'single',
   },
 };
